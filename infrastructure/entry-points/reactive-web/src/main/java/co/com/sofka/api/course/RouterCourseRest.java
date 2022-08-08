@@ -1,5 +1,6 @@
 package co.com.sofka.api.course;
 
+import co.com.sofka.api.course.handler.CreateCourseHandler;
 import co.com.sofka.api.course.handler.GetCoursesHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +14,8 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 @Configuration
 public class RouterCourseRest {
 @Bean
-public RouterFunction<ServerResponse> routerListCoursesFuntion(GetCoursesHandler getCoursesHandler) {
-
-    return route(GET("/api/courses"), getCoursesHandler::listCoursesUseCase);
-
+public RouterFunction<ServerResponse> routerListCoursesFunction(GetCoursesHandler getCoursesHandler,CreateCourseHandler createCourseHandler) {
+    return route(GET("/api/courses"), getCoursesHandler::listCoursesUseCase).andRoute
+            (POST("/api/course"), createCourseHandler::createCoursePOSTUseCase);
     }
 }

@@ -15,10 +15,10 @@ import reactor.core.publisher.Mono;
 public class GetCoursesHandler {
     private final ListCoursesUseCase listCoursesUseCase;
     public Mono<ServerResponse> listCoursesUseCase(ServerRequest serverRequest) {
-
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(listCoursesUseCase.listCourses(), Course.class);
     }
+
 
 }
