@@ -16,7 +16,7 @@ import java.util.UUID;
 @Document(value = "courses")
 public class CourseDocument {
     @Id
-    private String id;
+    private UUID id;
     private Set<String> levels;
     private String course;
     private String category;

@@ -8,7 +8,7 @@ import java.util.UUID;
 @Data
 @Builder(toBuilder = true)
 public class Course {
-    private String id;
+    private UUID id;
     private Set<String> levels;
     private String course;
     private String category;

@@ -18,7 +18,7 @@ public class GetCoursesHandler {
 
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromPublisher(listCoursesUseCase.get(), Course.class));
+                .body(listCoursesUseCase.listCourses(), Course.class);
     }
 
 }

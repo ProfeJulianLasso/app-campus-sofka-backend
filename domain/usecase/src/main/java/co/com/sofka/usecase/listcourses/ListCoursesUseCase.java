@@ -5,14 +5,15 @@ import co.com.sofka.model.course.gateways.CourseRepository;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 @RequiredArgsConstructor
-public class ListCoursesUseCase implements Supplier<Flux<Course>> {
+public class ListCoursesUseCase  {
     private final CourseRepository courseRepository;
 
-    @Override
-    public Flux<Course> get() {
+    public Flux<Course> listCourses() {
         return courseRepository.findAll();
     }
+
 }
