@@ -10,19 +10,19 @@ import java.util.Set;
 import java.util.UUID;
 
 
+@Document(value = "course")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(value = "courses")
 public class CourseDocument {
     @Id
     private String id;
-    private Set<String> levels;
+//    private Set<String> levels;
     private String course;
     private String category;
     private String subCategory;
-    private String trophy;
-    private Boolean trophyActivated;
-    private Integer completed;
+//    private String trophy;
+//    private Boolean trophyActivated;
+//    private Integer completed;
     private String image;
 }
