@@ -15,9 +15,10 @@ public class CreateCourseHandler {
     private final CreateCourseUseCase createCourseUseCase;
 
     public Mono<ServerResponse> createCoursePOSTUseCase(ServerRequest serverRequest) {
-        return serverRequest.bodyToMono(Course.class)
-                .flatMap(element -> ServerResponse.ok()
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .body(createCourseUseCase.createCourse(element), Course.class));
+//        return serverRequest.bodyToMono(Course.class)
+//                .flatMap(element -> ServerResponse.ok()
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .body(createCourseUseCase.apply(element), Course.class));
+        return null;
     }
 }

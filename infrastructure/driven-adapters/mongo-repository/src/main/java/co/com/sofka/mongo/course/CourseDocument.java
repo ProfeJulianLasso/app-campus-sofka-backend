@@ -1,5 +1,6 @@
 package co.com.sofka.mongo.course;
 
+import co.com.sofka.model.question.Question;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.UUID;
 public class CourseDocument {
     @Id
     private String id;
-//    private Set<String> levels;
+    private Set<String> questions;
     private String course;
     private String category;
     private String subCategory;

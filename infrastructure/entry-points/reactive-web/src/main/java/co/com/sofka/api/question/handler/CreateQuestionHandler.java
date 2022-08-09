@@ -20,7 +20,7 @@ public class CreateQuestionHandler {
         return serverRequest.bodyToMono(Question.class)
                 .flatMap(question -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(createQuestionUseCase.createQuestionUseCase(question),Question.class));
+                        .body(createQuestionUseCase.createQuestion(question),Question.class));
     }
 
 }

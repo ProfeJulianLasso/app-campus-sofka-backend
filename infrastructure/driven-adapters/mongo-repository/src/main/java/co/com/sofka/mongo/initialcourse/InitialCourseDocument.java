@@ -1,23 +1,23 @@
-package co.com.sofka.model.course;
+package co.com.sofka.mongo.initialcourse;
+
 import co.com.sofka.model.question.Question;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Set;
-import java.util.UUID;
 
 
-
+@Document(value = "initialcourse")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder(toBuilder = true)
-public class Course {
-
-    private String id = UUID.randomUUID().toString().substring(0, 36);
-    private Set<String> questions;
+public class InitialCourseDocument {
+    @Id
+    private String id;
+    private Set<Question> questions;
     private String course;
     private String category;
     private String subCategory;
