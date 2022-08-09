@@ -15,13 +15,13 @@ import java.util.UUID;
 @Builder(toBuilder = true)
 public class Course {
 
-    private String id;
+    private String id = UUID.randomUUID().toString().substring(0, 36);
 //    private Set<String> levels;
     private String course;
     private String category;
     private String subCategory;
 //    private String trophy;
 //    private Boolean trophyActivated;
-//    private Integer completed;
+    private Integer completed;
     private String image;
 }
