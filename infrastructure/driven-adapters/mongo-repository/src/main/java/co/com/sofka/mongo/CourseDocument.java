@@ -23,6 +23,6 @@ public class CourseDocument {
     private String subCategory;
 //    private String trophy;
 //    private Boolean trophyActivated;
-//    private Integer completed;
+    private Integer completed;
     private String image;
 }
