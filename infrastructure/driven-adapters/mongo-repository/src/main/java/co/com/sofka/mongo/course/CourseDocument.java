@@ -1,4 +1,4 @@
-package co.com.sofka.mongo;
+package co.com.sofka.mongo.course;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
