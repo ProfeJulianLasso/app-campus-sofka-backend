@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 public class DistributeQuestionUseCase implements Function<InitialCourse,Mono<InitialCourse>> {
 
     private final QuestionRepository questionRepository;
-
     private final CreateQuestionUseCase createQuestionUseCase;
 
     private final InitialCourseRepository initialCourseRepository;
@@ -29,10 +28,11 @@ public class DistributeQuestionUseCase implements Function<InitialCourse,Mono<In
         Flux.fromIterable(initialCourse.getQuestions())
                 .flatMap(question -> {
                     questions.add(question);
-                    return createQuestionUseCase.createQuestion(question);
+                    return questionRepository.save(question);
                 }).collect(Collectors.toSet()).subscribe();
         initialCourse.setQuestions(questions);
 
-        return initialCourseRepository.save(initialCourse);
+        return Mono.just(initialCourse);
+       // return initialCourseRepository.save(initialCourse);
     }
 }
