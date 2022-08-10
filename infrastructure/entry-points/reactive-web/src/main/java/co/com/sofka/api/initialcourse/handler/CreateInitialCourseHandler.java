@@ -3,6 +3,7 @@ package co.com.sofka.api.initialcourse.handler;
 import co.com.sofka.model.course.Course;
 import co.com.sofka.model.initialcourse.InitialCourse;
 import co.com.sofka.usecase.createcourse.CreateCourseUseCase;
+import co.com.sofka.usecase.createinitialcourse.CreateInitialCourseUseCase;
 import co.com.sofka.usecase.createquestion.CreateQuestionUseCase;
 import co.com.sofka.usecase.distributequestion.DistributeQuestionUseCase;
 import lombok.RequiredArgsConstructor;
@@ -17,13 +18,13 @@ import reactor.core.publisher.Mono;
 public class CreateInitialCourseHandler {
     private final DistributeQuestionUseCase distributeQuestionUseCase;
 
-    private final CreateCourseUseCase createCourseUseCase;
+    private final CreateInitialCourseUseCase createInitialCourseUseCase;
 
     public Mono<ServerResponse> createInitialCoursePOSTUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(InitialCourse.class)
                 .flatMap(course -> distributeQuestionUseCase.apply(course))
                 .zipWith(Mono.just(new Course()))
-                .flatMap(element -> this.createCourseUseCase.apply(element.getT1(),element.getT2()))
+                .flatMap(element -> this.createInitialCourseUseCase.apply(element.getT1(),element.getT2()))
                 .flatMap(element -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(distributeQuestionUseCase.apply(element), InitialCourse.class));
