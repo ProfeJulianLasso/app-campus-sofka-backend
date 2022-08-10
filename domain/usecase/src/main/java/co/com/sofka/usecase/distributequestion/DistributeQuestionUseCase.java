@@ -28,9 +28,8 @@ public class DistributeQuestionUseCase implements Function<InitialCourse,Mono<In
         Set<Question> questions = new HashSet<>();
         Flux.fromIterable(initialCourse.getQuestions())
                 .flatMap(question -> {
-                    createQuestionUseCase.createQuestion(question);
                     questions.add(question);
-                    return questionRepository.save(question);
+                    return createQuestionUseCase.createQuestion(question);
                 }).collect(Collectors.toSet()).subscribe();
         initialCourse.setQuestions(questions);
 
