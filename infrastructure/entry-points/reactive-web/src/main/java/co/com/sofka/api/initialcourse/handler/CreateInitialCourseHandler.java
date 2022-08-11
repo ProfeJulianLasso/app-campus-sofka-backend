@@ -2,9 +2,7 @@ package co.com.sofka.api.initialcourse.handler;
 
 import co.com.sofka.model.course.Course;
 import co.com.sofka.model.initialcourse.InitialCourse;
-import co.com.sofka.usecase.createcourse.CreateCourseUseCase;
 import co.com.sofka.usecase.createinitialcourse.CreateInitialCourseUseCase;
-import co.com.sofka.usecase.createquestion.CreateQuestionUseCase;
 import co.com.sofka.usecase.createstep.CreateStepUseCase;
 import co.com.sofka.usecase.distributelevels.DistributeLevelsUseCase;
 import co.com.sofka.usecase.distributequestion.DistributeQuestionUseCase;

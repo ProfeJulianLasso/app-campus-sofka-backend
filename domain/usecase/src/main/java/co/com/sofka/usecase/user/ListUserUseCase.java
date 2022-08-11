@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 @RequiredArgsConstructor
 public class ListUserUseCase {
     private final UserRepository userRepository;
-    public Flux<User> listUserUseCase() {
+    public Flux<User> listUser() {
         return userRepository.findAll();
     }
 }
