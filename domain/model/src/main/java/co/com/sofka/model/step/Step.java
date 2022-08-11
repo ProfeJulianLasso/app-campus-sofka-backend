@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder(toBuilder = true)
 public class Step {
     private String id = UUID.randomUUID().toString().substring(0, 36);
