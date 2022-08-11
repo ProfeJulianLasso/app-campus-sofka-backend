@@ -1,4 +1,4 @@
-package co.com.sofka.mongo.topic;
+package co.com.sofka.mongo.level;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,14 +10,13 @@ import java.util.Set;
 import java.util.UUID;
 
 
-@Document(value = "topic")
+@Document(value = "level")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TopicDocument {
+public class LevelDocument {
     @Id
     private String id;
-    private String name;
-    private String icon;
-    private Set<String> previous;
+    private Set<String> topics;
+    private String badge;
 }

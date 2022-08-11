@@ -6,6 +6,7 @@ import co.com.sofka.usecase.createcourse.CreateCourseUseCase;
 import co.com.sofka.usecase.createinitialcourse.CreateInitialCourseUseCase;
 import co.com.sofka.usecase.createquestion.CreateQuestionUseCase;
 import co.com.sofka.usecase.createstep.CreateStepUseCase;
+import co.com.sofka.usecase.distributelevels.DistributeLevelsUseCase;
 import co.com.sofka.usecase.distributequestion.DistributeQuestionUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -20,6 +21,7 @@ public class CreateInitialCourseHandler {
     private final DistributeQuestionUseCase distributeQuestionUseCase;
 
     private final CreateStepUseCase createStepUseCase;
+    private final DistributeLevelsUseCase distributeLevelsUseCase;
 
     private final CreateInitialCourseUseCase createInitialCourseUseCase;
 
@@ -29,6 +31,7 @@ public class CreateInitialCourseHandler {
                 .zipWith(Mono.just(new Course()))
                 .flatMap(element -> this.createInitialCourseUseCase.apply(element.getT1(),element.getT2()))
                 .flatMap(element -> this.createStepUseCase.apply(element))
+                .flatMap(element -> this.distributeLevelsUseCase.apply(element))
                 .flatMap(element -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(distributeQuestionUseCase.apply(element), InitialCourse.class));

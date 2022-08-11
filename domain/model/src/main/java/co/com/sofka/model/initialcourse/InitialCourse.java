@@ -1,5 +1,6 @@
 package co.com.sofka.model.initialcourse;
 import co.com.sofka.model.flagstep.FlagStep;
+import co.com.sofka.model.level.Level;
 import co.com.sofka.model.question.Question;
 import co.com.sofka.model.step.Step;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ public class InitialCourse {
         private String category;
         private String subCategory;
         private List<Object> steps;
+        private List<Object> levels;
         //    private String trophy;
 //    private Boolean trophyActivated;
         private Integer completed;
