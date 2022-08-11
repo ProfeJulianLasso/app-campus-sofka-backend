@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(value = "topic")
+@Document(value = "step")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

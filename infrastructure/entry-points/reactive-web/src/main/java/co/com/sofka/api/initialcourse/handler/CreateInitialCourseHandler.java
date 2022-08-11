@@ -28,7 +28,7 @@ public class CreateInitialCourseHandler {
                 .flatMap(course -> distributeQuestionUseCase.apply(course))
                 .zipWith(Mono.just(new Course()))
                 .flatMap(element -> this.createInitialCourseUseCase.apply(element.getT1(),element.getT2()))
-              //  .flatMap(element -> this.createStepUseCase.apply(element))
+                .flatMap(element -> this.createStepUseCase.apply(element))
                 .flatMap(element -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .body(distributeQuestionUseCase.apply(element), InitialCourse.class));

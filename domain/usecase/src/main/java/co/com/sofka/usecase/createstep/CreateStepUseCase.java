@@ -31,8 +31,9 @@ public class CreateStepUseCase implements Function<InitialCourse,Mono<InitialCou
                     JSONObject objeto = jsonarray.getJSONObject(x);
                     Set<String> stepss = jsonarray.getJSONObject(x).keySet();
                     String step = stepss.toString().replace("[","").replace("]","");
-                    System.out.println(step);
                     Step stepSave = new Step();
+                    stepSave.setPosition(x+1);
+                    stepSave.setName(step);
                     return stepRepository.save(stepSave);
                 }).subscribe();
         return Mono.just(initialCourse);
