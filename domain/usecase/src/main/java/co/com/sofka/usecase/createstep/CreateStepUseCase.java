@@ -1,11 +1,10 @@
 package co.com.sofka.usecase.createstep;
 
-import co.com.sofka.model.flagstep.FlagStep;
+
+
 import co.com.sofka.model.initialcourse.InitialCourse;
-import co.com.sofka.model.question.Question;
 import co.com.sofka.model.step.Step;
 import co.com.sofka.model.step.gateways.StepRepository;
-import jdk.jfr.FlightRecorder;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,9 +17,9 @@ import java.util.function.Function;
 
 
 @RequiredArgsConstructor
-public class CreateStepUseCase implements Function<InitialCourse, Mono<InitialCourse>> {
+public class CreateStepUseCase implements Function<InitialCourse,Mono<InitialCourse>> {
+    private final StepRepository stepRepository;
 
-   private final StepRepository stepRepository;
 
     @Override
     public Mono<InitialCourse> apply(InitialCourse initialCourse) {
@@ -32,8 +31,9 @@ public class CreateStepUseCase implements Function<InitialCourse, Mono<InitialCo
                     JSONObject objeto = jsonarray.getJSONObject(x);
                     Set<String> stepss = jsonarray.getJSONObject(x).keySet();
                     String step = stepss.toString().replace("[","").replace("]","");
-                    System.out.println(step);
                     Step stepSave = new Step();
+                    stepSave.setPosition(x+1);
+                    stepSave.setName(step);
                     return stepRepository.save(stepSave);
                 }).subscribe();
         return Mono.just(initialCourse);

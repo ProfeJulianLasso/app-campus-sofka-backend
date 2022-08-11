@@ -6,5 +6,5 @@ import reactor.core.publisher.Mono;
 
 public interface StepRepository {
 
-    Mono<Step> save(Step step);
+ Mono<Step> save(Step step);
 }
