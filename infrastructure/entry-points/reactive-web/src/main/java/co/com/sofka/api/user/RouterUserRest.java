@@ -7,12 +7,14 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Component
 public class RouterUserRest {
     @Bean
     public RouterFunction<ServerResponse> routerListUserFunction(Handler handler) {
-        return route(GET("/api/user"), handler::listUserGetUseCase);
+        return route(GET("/api/users"), handler::listUserGetUseCase)
+                .and(route(POST("/api/user"), handler::createUserPOSTUseCase));
     }
 }
