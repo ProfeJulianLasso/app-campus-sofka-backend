@@ -1,11 +1,8 @@
 package co.com.sofka.api.topic.handler;
 
-import co.com.sofka.model.course.Course;
 import co.com.sofka.model.topic.Topic;
-import co.com.sofka.usecase.listcourses.ListCoursesUseCase;
-import co.com.sofka.usecase.listtopic.ListTopicUseCase;
+import co.com.sofka.usecase.topic.listtopic.ListTopicUseCase;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
