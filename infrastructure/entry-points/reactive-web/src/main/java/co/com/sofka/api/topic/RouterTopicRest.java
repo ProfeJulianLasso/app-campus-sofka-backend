@@ -15,8 +15,10 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Configuration
 public class RouterTopicRest {
-@Bean
-public RouterFunction<ServerResponse> routerListTopicFunction(ListTopicForLevelHandler listTopicForLevelHandler) {
-    return route(GET("/api/levels/{idlevel}"), listTopicForLevelHandler::GetListTopicForLevelHandler);
+    @Bean
+    public RouterFunction<ServerResponse> routerListTopicFunction(GetTopicHandler getTopicHandler, CreateTopicHandler createTopicHandler,ListTopicForLevelHandler listTopicForLevelHandler) {
+        return route(GET("/api/topic/{id}"), getTopicHandler::listTopicUseCase).andRoute
+                (POST("/api/topic"), createTopicHandler::createTopicPOSTUseCase).andRoute
+                (GET("/api/levels/{idlevel}"), listTopicForLevelHandler::GetListTopicForLevelHandler);
     }
 }

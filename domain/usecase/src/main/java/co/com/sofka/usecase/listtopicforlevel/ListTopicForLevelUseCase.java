@@ -15,25 +15,34 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public class ListTopicForLevelUseCase implements Function<String,Flux<Topic>> {
-    private  final TopicRepository topicRepository;
+public class ListTopicForLevelUseCase implements Function<String, Flux<Topic>> {
+    private final TopicRepository topicRepository;
     private final LevelRepository levelRepository;
 
     @Override
     public Flux<Topic> apply(String idLevel) {
-        Flux<Level> levelFlux=levelRepository.findAll();
-        Set<String> idtopics= new HashSet<>();
-        Set<Topic> topics=new HashSet<>();
-        levelFlux.filter(level -> Objects.equals(level.getId(),idLevel))
+        System.out.println(idLevel);
+        Flux<Level> levelFlux = levelRepository.findAll();
+        Set<String> idtopics = new HashSet<>();
+        Set<Topic> topics = new HashSet<>();
+        levelFlux.filter(level -> {
+                            System.out.println(level.getId());
+                            return Objects.equals(level.getId(), idLevel);
+                        }
+                )
+
                 .map(level -> level.getTopics())
-                .map(idtopic->idtopics.addAll(idtopic));
-       idtopics.stream().map(id->
-            topicRepository.findById(id)
-        ).map((Mono<Topic> topicMono) ->{
-            topicMono.map(topic -> topics.add(topic));
-            return  topicMono;
-      });
-        Flux<Topic> topicFlux=Flux.fromIterable(topics);
+                .map(idtopic -> idtopics.addAll(idtopic)).subscribe(System.out::println);
+        System.out.println(idtopics);
+        idtopics.stream().map(id -> {
+                    System.out.println(id);
+                    return topicRepository.findById(id);
+                }
+        ).map((Mono<Topic> topicMono) -> {
+            topicMono.map(topic -> topics.add(topic)).subscribe(System.out::println);
+            return topicMono;
+        });
+        Flux<Topic> topicFlux = Flux.fromIterable(topics);
         return topicFlux;
     }
 }
