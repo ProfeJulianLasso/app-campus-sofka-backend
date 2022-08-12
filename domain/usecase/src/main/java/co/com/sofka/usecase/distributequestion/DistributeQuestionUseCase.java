@@ -4,7 +4,7 @@ import co.com.sofka.model.initialcourse.InitialCourse;
 import co.com.sofka.model.initialcourse.gateways.InitialCourseRepository;
 import co.com.sofka.model.question.Question;
 import co.com.sofka.model.question.gateways.QuestionRepository;
-import co.com.sofka.usecase.createquestion.CreateQuestionUseCase;
+import co.com.sofka.usecase.listquestion.createquestion.CreateQuestionUseCase;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -35,4 +35,5 @@ public class DistributeQuestionUseCase implements Function<InitialCourse,Mono<In
         return Mono.just(initialCourse);
        // return initialCourseRepository.save(initialCourse);
     }
+
 }

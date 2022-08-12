@@ -1,4 +1,4 @@
-package co.com.sofka.usecase.createquestion;
+package co.com.sofka.usecase.listquestion.createquestion;
 
 import co.com.sofka.model.course.Course;
 import co.com.sofka.model.course.gateways.CourseRepository;
