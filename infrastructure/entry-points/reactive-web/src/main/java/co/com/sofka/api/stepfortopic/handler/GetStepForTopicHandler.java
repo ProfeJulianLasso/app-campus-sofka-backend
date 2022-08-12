@@ -1,9 +1,7 @@
 package co.com.sofka.api.stepfortopic.handler;
 
 import co.com.sofka.model.stepfortopic.StepForTopic;
-import co.com.sofka.model.topic.Topic;
-import co.com.sofka.usecase.liststepfortopic.ListStepForTopicUseCase;
-import co.com.sofka.usecase.listtopic.ListTopicUseCase;
+import co.com.sofka.usecase.stepfortopic.liststepfortopic.ListStepForTopicUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

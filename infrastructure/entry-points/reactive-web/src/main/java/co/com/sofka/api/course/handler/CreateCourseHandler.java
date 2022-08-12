@@ -1,9 +1,7 @@
 package co.com.sofka.api.course.handler;
 
-import co.com.sofka.model.course.Course;
-import co.com.sofka.usecase.createcourse.CreateCourseUseCase;
+import co.com.sofka.usecase.course.createcourse.CreateCourseUseCase;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;

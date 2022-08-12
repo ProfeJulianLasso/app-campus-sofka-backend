@@ -1,9 +1,7 @@
 package co.com.sofka.api.question.handler;
 
-import co.com.sofka.model.course.Course;
 import co.com.sofka.model.question.Question;
-import co.com.sofka.usecase.createcourse.CreateCourseUseCase;
-import co.com.sofka.usecase.createquestion.CreateQuestionUseCase;
+import co.com.sofka.usecase.question.createquestion.CreateQuestionUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

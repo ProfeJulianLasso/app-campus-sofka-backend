@@ -2,11 +2,11 @@ package co.com.sofka.usecase.getcalendar;
 
 import co.com.sofka.model.calendar.Calendar;
 import co.com.sofka.model.calendar.gateways.CalendarRepository;
+import co.com.sofka.usecase.calendar.getcalendar.GetCalendarUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.mock.mockito.SpyBean;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
