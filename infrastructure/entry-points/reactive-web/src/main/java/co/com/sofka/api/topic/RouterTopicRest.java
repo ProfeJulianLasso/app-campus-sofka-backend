@@ -2,6 +2,7 @@ package co.com.sofka.api.topic;
 
 import co.com.sofka.api.topic.handler.CreateTopicHandler;
 import co.com.sofka.api.topic.handler.GetTopicHandler;
+import co.com.sofka.api.topic.handler.ListTopicForLevelHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -15,8 +16,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterTopicRest {
 @Bean
-public RouterFunction<ServerResponse> routerListTopicFunction(GetTopicHandler getTopicHandler, CreateTopicHandler createTopicHandler) {
-    return route(GET("/api/topic/{id}"), getTopicHandler::listTopicUseCase).andRoute
-            (POST("/api/topic"), createTopicHandler::createTopicPOSTUseCase);
+public RouterFunction<ServerResponse> routerListTopicFunction(ListTopicForLevelHandler listTopicForLevelHandler) {
+    return route(GET("/api/levels/{idlevel}"), listTopicForLevelHandler::GetListTopicForLevelHandler);
     }
 }
