@@ -22,7 +22,7 @@ public class InitialCourse {
         private String category;
         private String subCategory;
         private List<Object> steps;
-        private List<FlagLevel> levels;
+        private List<Level> levels;
         //    private String trophy;
         //    private Boolean trophyActivated;
         private Integer completed;

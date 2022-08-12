@@ -9,7 +9,7 @@ import java.util.function.Function;
 
 @RequiredArgsConstructor
 public class CreateStepForTopicUseCase implements Function<StepForTopic, Mono<StepForTopic>> {
-    StepForTopicRepository stepForTopicRepository;
+    private final StepForTopicRepository stepForTopicRepository;
     @Override
     public Mono<StepForTopic> apply(StepForTopic stepForTopic) {
         return stepForTopicRepository.save(stepForTopic);

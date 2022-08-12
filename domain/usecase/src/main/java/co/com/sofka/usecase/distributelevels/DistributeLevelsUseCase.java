@@ -24,12 +24,6 @@ public class DistributeLevelsUseCase implements Function<InitialCourse,Mono<Init
         List<Level> levels = new ArrayList<>();
         Flux.fromIterable(initialCourse.getLevels())
                 .flatMap(level -> {
-                    level.getTopics().stream().map(topic -> {
-                        Mono<Topic> topicMono = topicRepository.save(topic);
-                        topicMono.map(topic1->topic1.getId()).map(element-> {
-
-                        } )
-                    });
                     levels.add(level);
                     return levelRepository.save(level);
                 }).collect(Collectors.toSet()).subscribe();
