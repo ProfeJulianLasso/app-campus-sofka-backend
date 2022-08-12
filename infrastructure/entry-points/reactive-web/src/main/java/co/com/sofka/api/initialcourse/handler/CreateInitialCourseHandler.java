@@ -2,10 +2,10 @@ package co.com.sofka.api.initialcourse.handler;
 
 import co.com.sofka.model.course.Course;
 import co.com.sofka.model.initialcourse.InitialCourse;
-import co.com.sofka.usecase.createinitialcourse.CreateInitialCourseUseCase;
-import co.com.sofka.usecase.createstep.CreateStepUseCase;
-import co.com.sofka.usecase.distributelevels.DistributeLevelsUseCase;
-import co.com.sofka.usecase.distributequestion.DistributeQuestionUseCase;
+import co.com.sofka.usecase.course.createinitialcourse.CreateInitialCourseUseCase;
+import co.com.sofka.usecase.step.createstep.CreateStepUseCase;
+import co.com.sofka.usecase.level.distributelevels.DistributeLevelsUseCase;
+import co.com.sofka.usecase.question.distributequestion.DistributeQuestionUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

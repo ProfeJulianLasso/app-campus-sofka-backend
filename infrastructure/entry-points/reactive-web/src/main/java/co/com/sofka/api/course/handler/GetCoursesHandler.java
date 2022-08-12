@@ -1,11 +1,10 @@
 package co.com.sofka.api.course.handler;
 
 import co.com.sofka.model.course.Course;
-import co.com.sofka.usecase.listcourses.ListCoursesUseCase;
+import co.com.sofka.usecase.course.listcourses.ListCoursesUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;

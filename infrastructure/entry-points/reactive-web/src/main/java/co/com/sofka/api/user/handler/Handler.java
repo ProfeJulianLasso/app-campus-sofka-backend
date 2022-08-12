@@ -1,8 +1,8 @@
 package co.com.sofka.api.user.handler;
 
 import co.com.sofka.model.user.User;
-import co.com.sofka.usecase.user.CreateUserUseCase;
-import co.com.sofka.usecase.user.ListUserUseCase;
+import co.com.sofka.usecase.user.createuser.CreateUserUseCase;
+import co.com.sofka.usecase.user.listuser.ListUserUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

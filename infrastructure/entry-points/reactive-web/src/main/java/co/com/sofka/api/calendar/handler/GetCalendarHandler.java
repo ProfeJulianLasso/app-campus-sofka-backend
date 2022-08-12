@@ -1,7 +1,7 @@
 package co.com.sofka.api.calendar.handler;
 
 import co.com.sofka.model.calendar.Calendar;
-import co.com.sofka.usecase.getcalendar.GetCalendarUseCase;
+import co.com.sofka.usecase.calendar.getcalendar.GetCalendarUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

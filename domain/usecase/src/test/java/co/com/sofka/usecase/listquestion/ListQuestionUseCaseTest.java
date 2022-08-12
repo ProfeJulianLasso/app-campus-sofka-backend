@@ -2,6 +2,7 @@ package co.com.sofka.usecase.listquestion;
 
 import co.com.sofka.model.question.Question;
 import co.com.sofka.model.question.gateways.QuestionRepository;
+import co.com.sofka.usecase.question.listquestion.ListQuestionUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;

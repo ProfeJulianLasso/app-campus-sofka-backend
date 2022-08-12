@@ -2,6 +2,7 @@ package co.com.sofka.usecase.user;
 
 import co.com.sofka.model.user.User;
 import co.com.sofka.model.user.gateways.UserRepository;
+import co.com.sofka.usecase.user.createuser.CreateUserUseCase;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
