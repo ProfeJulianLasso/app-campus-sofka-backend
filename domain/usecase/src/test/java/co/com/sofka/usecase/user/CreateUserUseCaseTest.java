@@ -13,6 +13,18 @@ import reactor.test.StepVerifier;
 
 import static org.mockito.Mockito.when;
 
+/**
+ * [
+ *  contiene el test de crear usuario
+ *  nos permite probar en pleno flujo, nos guarda bien el usuario
+ *  con la informacion
+ * ]
+ * @version [1,0.0]
+ *
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
+ * @since [1,0,0]
+ *
+ */
 @ExtendWith(MockitoExtension.class)
 class CreateUserUseCaseTest {
     @InjectMocks

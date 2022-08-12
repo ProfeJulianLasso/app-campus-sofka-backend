@@ -19,6 +19,18 @@ import java.util.List;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * [
+ *  contiene el test de listar usuario por id
+ *  nos permite probar en pleno flujo, listar usuario segun el id
+ *  que se mande
+ * ]
+ * @version [1,0.0]
+ *
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
+ * @since [1,0,0]
+ *
+ */
 @ExtendWith(MockitoExtension.class)
 class ListUserIdUseCaseTest {
     @InjectMocks

@@ -8,6 +8,20 @@ import lombok.NoArgsConstructor;
 
 import java.util.Set;
 import java.util.UUID;
+
+/**
+ * [
+ *  contiene el modelo de usuario
+ *  con sus atributos adicional las anotacion
+ *  para sus setter y getter
+ *  contructores
+ * ]
+ * @version [1,0.0]
+ *
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
+ * @since [1,0,0]
+ *
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

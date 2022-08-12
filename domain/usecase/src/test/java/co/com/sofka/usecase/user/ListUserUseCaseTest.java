@@ -17,13 +17,37 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.Mockito.when;
 
+/**
+ * [
+ *  contiene el test de listar usuario
+ *  nos permite probar en pleno flujo, si nos lista usuarios
+ * ]
+ * @version [1,0.0]
+ *
+ * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
+ * @since [1,0,0]
+ *
+ */
 @ExtendWith(MockitoExtension.class)
 class ListUserUseCaseTest {
     @InjectMocks
-    private CreateUserUseCase createUserUseCaseTest;
+    private ListUserUseCase createUserUseCaseTest;
 
     @Mock
     private UserRepository userRepositoryTest;
+
+    /**
+     * [
+     *  se instancian 2 usuarios, adicional se crea una lista de usuarios
+     *  para agregar los usuarios instanciados, despues pasamos al flujo reactivo para probar
+     *  con el repository el metodo listar todos los usuarios
+     * ]
+     * @version [1,0.0]
+     *
+     * @author [Yeferson Valencia, alejandro.yandd@gmail.com]
+     * @since [1,0,0]
+     *
+     */
     @Test
     void listUserTest(){
 
