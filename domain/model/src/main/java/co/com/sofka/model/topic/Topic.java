@@ -15,5 +15,7 @@ public class Topic {
     private String id = UUID.randomUUID().toString().substring(0, 36);
     private String name;
     private String icon;
+    private Boolean activated;
+    private Boolean completed;
     private Set<String> previous;
 }

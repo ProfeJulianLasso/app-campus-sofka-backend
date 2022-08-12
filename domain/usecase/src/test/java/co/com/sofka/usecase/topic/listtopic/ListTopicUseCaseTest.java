@@ -43,9 +43,10 @@ class ListTopicUseCaseTest {
         Set<String> previous2 = new HashSet<>();
         previous.add("id1");
         previous.add("id2");
-        Topic topic1 = new Topic("1","name1","icon",previous);
-        Topic topic2 = new Topic("2","name2","icon",previous1);
-        Topic topic3 = new Topic("3","name3","icon",previous2);
+        Topic topic1 = new Topic("1","name1","icon",false,false,previous);
+        Topic topic2 = new Topic("2","name2","icon",false,false,previous1);
+        Topic topic3 = new Topic("3","name3","icon",false,false,previous2);
+
 
         Flux<Topic> topics = Flux.just(topic1,topic2,topic3);
 

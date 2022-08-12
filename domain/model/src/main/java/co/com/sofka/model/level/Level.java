@@ -15,5 +15,6 @@ import java.util.UUID;
 public class Level {
     private String id = UUID.randomUUID().toString().substring(0, 36);
     private Set<String> topics;
+    private Boolean completed;
     private String badge;
 }

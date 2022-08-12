@@ -16,8 +16,8 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class RouterStepForTopicRest {
 @Bean
-public RouterFunction<ServerResponse> routerListStepForTopicFunction(GetStepForTopicHandler getStepForTopicHandler, CreateStepForTopicHandler createStepForTopicHandler) {
+public RouterFunction<ServerResponse> routerListStepForTopicFunction(GetStepForTopicHandler getStepForTopicHandler, CreateStepForTopicHandler createQuestionPOSTUseCase) {
     return route(GET("/api/stepfortopic/{idStep}/{idTopic}"), getStepForTopicHandler::listStepForTopicUseCase).andRoute
-            (POST("/api/stepfortopic"), createStepForTopicHandler::createCreateStepForTopicPOSTUseCase);
+            (POST("/api/stepForTopic"), createQuestionPOSTUseCase::createCreateStepForTopicPOSTUseCase);
     }
 }

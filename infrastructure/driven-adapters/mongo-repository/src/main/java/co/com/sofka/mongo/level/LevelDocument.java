@@ -18,5 +18,6 @@ public class LevelDocument {
     @Id
     private String id;
     private Set<String> topics;
+    private Boolean completed;
     private String badge;
 }
