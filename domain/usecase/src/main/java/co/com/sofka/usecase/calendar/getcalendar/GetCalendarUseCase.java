@@ -14,7 +14,6 @@ public class GetCalendarUseCase implements Function<String, Flux<Calendar>> {
     @Override
     public Flux<Calendar> apply(String date) {
        Flux<Calendar> calendarFlux= calendarRepository.findAll();
-       calendarFlux.subscribe(System.out::println);
         return calendarFlux.filter(calendar->Objects.equals(calendar.getDate(),date));
     }
 }

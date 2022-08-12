@@ -1,4 +1,5 @@
 package co.com.sofka.model.initialcourse;
+import co.com.sofka.model.flaglevel.FlagLevel;
 import co.com.sofka.model.level.Level;
 import co.com.sofka.model.question.Question;
 import lombok.AllArgsConstructor;

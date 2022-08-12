@@ -3,6 +3,8 @@ package co.com.sofka.usecase.level.distributelevels;
 import co.com.sofka.model.initialcourse.InitialCourse;
 import co.com.sofka.model.level.Level;
 import co.com.sofka.model.level.gateways.LevelRepository;
+import co.com.sofka.model.topic.Topic;
+import co.com.sofka.model.topic.gateways.TopicRepository;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class DistributeLevelsUseCase implements Function<InitialCourse,Mono<InitialCourse>>  {
     private final LevelRepository levelRepository;
 
+    private final TopicRepository topicRepository;
     @Override
     public Mono<InitialCourse> apply(InitialCourse initialCourse) {
         List<Level> levels = new ArrayList<>();

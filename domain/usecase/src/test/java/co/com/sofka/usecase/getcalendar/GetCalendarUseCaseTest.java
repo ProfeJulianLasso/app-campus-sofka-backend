@@ -29,9 +29,6 @@ class GetCalendarUseCaseTest {
         //arrange
         String date="2022-08-11";
         Calendar calendar = new Calendar("1","2022-08-11","Preguntas","java.com");
-        //Calendar calendar1 = new Calendar("2","2022-08-16","Preguntas1","java.com");
-        // Calendar calendar2 = new Calendar("3","2022-08-18","Preguntas2","java.com");
-
         Mono<Calendar> calendarMono = Mono.just(calendar);
         //act
         when(calendarRepository.findAll()).thenReturn(calendarMono);
