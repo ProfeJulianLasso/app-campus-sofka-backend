@@ -19,5 +19,7 @@ public class TopicDocument {
     private String id;
     private String name;
     private String icon;
+    private Boolean activated;
+    private Boolean completed;
     private Set<String> previous;
 }
