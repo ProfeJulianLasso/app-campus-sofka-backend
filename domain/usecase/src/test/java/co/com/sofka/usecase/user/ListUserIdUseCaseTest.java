@@ -1,5 +1,6 @@
 package co.com.sofka.usecase.user;
 
+import co.com.sofka.model.course.Course;
 import co.com.sofka.model.user.User;
 import co.com.sofka.model.user.gateways.UserRepository;
 import org.junit.jupiter.api.Assertions;
@@ -14,7 +15,9 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -41,10 +44,17 @@ class ListUserIdUseCaseTest {
 
     @Test
     void listUserTestId(){
+        Course course = Course.builder()
+                .id("fffv")
+                .build();
+        Set<Course> listCourses = new HashSet<Course>();
+        listCourses.add(course);
+        listCourses.add(course);
 
         User user1 = User.builder()
                 .id("erf")
                 .email("yefer@gmail.com")
+                .courses(listCourses)
                 .build();
 
         User user2 = User.builder()
